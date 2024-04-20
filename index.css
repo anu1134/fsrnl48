@@ -1,0 +1,23 @@
+span {
+    background-color: aquamarine;
+}
+
+#block-element {
+    background-color: aqua;
+    padding: 20px;
+    margin: 40px;
+    font-style: italic;
+    font-size: large;
+    font-weight: bold;
+    display: inline;
+}
+
+#inline-element{
+    color: white;
+    display: block;
+}
+
+.block {
+    border: 1px solid black;
+    background-color: red;
+}

@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    transition: all 0.2s linear;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-size: x-large;
+    align-items: center;
+    color: white;
+    margin: 20px;
+    padding: 10px;
+}
+
+header span {
+    z-index: 1;
+}
+
+header a {
+    margin: 10px;
+    font-style: italic;
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.home img{
+    width: 100%;
+    position: relative;
+    top: -100px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-size:xx-large;
+    transform: translate(-50%, -50%);
+    font-style: italic;
+}
+
+button {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.about {
+    width: 100%;
+}
+
+.about .row {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    width: 80%;
+    margin: 50px;
+    margin: auto;
+}
+
+.content1 {
+    padding: 40px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+    font-size: xx-large;
+    color: red;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.gallery .card img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-section h1 {
+    padding: 40px;
+}
+
+.team .row {
+    display: flex;
+}
+
+.team .row img {
+    height: 400px;
+}
+
+.team h1 {
+    padding: 50px;
+}
+
+.content2 {
+    padding: 40px;
+    text-align: center;
+    color: black;
+    background-color: black;
+}
+
+input {
+    width: 100%;
+    background-color: black;
+}
+
+textarea {
+    width: 100%;
+    background-color: black;
+}
+
+.content2 button {
+    width: 100%;
+    background-color: red;
+    color: white;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover .card-content{
+    transform: translateY(0%);
+}
+
+.card:hover img {
+    transform: translateY(-100%); 
+}
+
+.card-content {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    color: white;
+    text-align: center;
+}
+

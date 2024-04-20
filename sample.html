@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+<body>
+    <!-- 
+        Learning HTML Forms
+    -->
+    <h1>HTML Forms</h1>
+    <form action="">
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="firstName" required><br><br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName"><br>
+        </fieldset>
+        
+        <input type="radio" name="gender" id="Male" value="male">
+        <label for="Male">Male</label><br>
+        <input type="radio" name="gender" id="Female" value="female">
+        <label for="Female">Female</label><br><br>
+        <input type="checkbox" name="language1" id="HTML" value="HTML">
+        <label for="HTML">HTML</label>
+        <input type="checkbox" name="language2" id="CSS" value="CSS">
+        <label for="CSS">CSS</label>
+        <input type="checkbox" name="language3" id="JavaScript" value="JavaScript">
+        <label for="JavaScript">JavaScript</label><br><br>
+        <label for="email">Enter Email</label>
+        <input type="email" name="emailAddress" id="email"><br><br>
+        <label for="vehicle">Select your vehicle</label>
+        <select name="myVehicle" id="vehicle">
+            <option value="car">Car</option>
+            <option value="bike">Bike</option>
+            <option value="bus">Bus</option>
+            <option value="train">Train</option>
+        </select><br><br>
+        <input type="date" name="" id=""><br>
+        <label for="introduction">Write about yourself</label><br>
+        <textarea name="" id="introduction" cols="30" rows="10"></textarea>
+        <input type="submit" value="Submit">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
