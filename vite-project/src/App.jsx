@@ -1,34 +1,26 @@
 import './App.css'
-// import  Button from './components/button'
-// import Profile from './components/profile'
-import Form from './components/form';
-// import { useState } from "react";
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
+
+/**
+ * Header
+ *  Navigation Bar
+ * Body
+ *  Filtering --- Search and Top Rated Restaurants
+ *  Restaurant Card
+ * Footer
+ */
 
 function App() {
-
-  //const [count, setCount] = useState(0); 
-
-  // function handleClick() {
-  //   console.log("Button Clicked");
-  //   setCount(count + 1);
-  //   console.log(count);
-  // }
-
-  // const properties = {
-  //   click: handleClick,
-  //   count: count
-  // }
-
-  return (
+  return(
     <>
-      <h1>Learning Functional Components</h1>
-      {/* <Button properties={properties}/>
-      <Button properties={properties} />
-      <Profile/> */}
-      <Form/>
+      <Header/>
+      <Body/>
+      <Footer />
     </> 
   )
-  
 }
+
 
 export default App

@@ -1,0 +1,24 @@
+.filtering-components {
+    display: flex;
+}
+
+.restaurant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    place-items: center;
+    height: 500px;
+  }
+
+  .search {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+  .topratedrestaurant {
+    padding: 0;
+    margin-top: 20px;
+  }

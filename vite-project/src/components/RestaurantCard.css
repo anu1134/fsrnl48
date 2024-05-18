@@ -1,0 +1,28 @@
+.restaurantCard {
+    position: relative;
+    width: 250px;
+    margin: 10px;
+  }
+  
+  .restaurantCard > img {
+    border-radius: 5%;
+    width: 100%;
+  }
+  
+  .offer {
+    position: absolute;
+    top: 100px;
+    margin-left: 10px;
+    color: white;
+  }
+  
+  .restaurant-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .restaurantCard:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+    transition: linear 0.1s;
+  }
