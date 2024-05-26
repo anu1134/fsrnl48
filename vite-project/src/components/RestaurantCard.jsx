@@ -23,7 +23,7 @@ function RestaurantCard(props) {
                 <div className="restaurant-details">
                 <div>
                     <span><FontAwesomeIcon icon={faStar} />{avgRating}</span>
-                    <span>{deliveryTime}</span>
+                    <span> {deliveryTime}</span>
                 </div>
                 <span>{cuisines}</span>
                 <span>{location}</span>

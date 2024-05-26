@@ -1,7 +1,13 @@
-function  TopRatedRestaurants() {
+import PropTypes from 'prop-types';
+
+TopRatedRestaurants.propTypes= {
+    topRatedFunction: PropTypes.func
+}
+
+function  TopRatedRestaurants(props) {
     return (
         <div className="topratedrestaurant">
-            <button>TopRatedRestaurants</button>
+            <button onClick={props.topRatedFunction}>TopRatedRestaurants</button>
         </div>
     )
 }

@@ -4,7 +4,7 @@ export const restaurantDetails = [
         imageId: "f996b31033fd07603bfb28cb4e526683",
         offerLine: "Items at 199",
         name: "Chinese Wok",
-        avgRating: "4",
+        avgRating: "4.1",
         deliveryTime: "55-60mins",
         cuisines: "Chinese , Tibetan, Asian",
         location: "Omaxe Mall"
@@ -14,7 +14,7 @@ export const restaurantDetails = [
         imageId: "ru7j7x8qqtvuzfuw7cdh",
         offerLine: "Rs 125 off above 399",
         name: "UBQ by Barbeque Nation",
-        avgRating: "4.1",
+        avgRating: "3.9",
         deliveryTime: "50-55mins",
         cuisines: "North-Indian, Biryani",
         location: "Janpath"
@@ -24,7 +24,7 @@ export const restaurantDetails = [
         imageId: "f996b31033fd07603bfb28cb4e526683",
         offerLine: "Items at 199",
         name: "Chinese Wok",
-        avgRating: "4",
+        avgRating: "4.8",
         deliveryTime: "55-60mins",
         cuisines: "Chinese , Tibetan, Asian",
         location: "Omaxe Mall"
@@ -34,7 +34,7 @@ export const restaurantDetails = [
         imageId: "ru7j7x8qqtvuzfuw7cdh",
         offerLine: "Rs 125 off above 399",
         name: "UBQ by Barbeque Nation",
-        avgRating: "4.1",
+        avgRating: "4.7",
         deliveryTime: "50-55mins",
         cuisines: "North-Indian, Biryani",
         location: "Janpath"
@@ -44,7 +44,7 @@ export const restaurantDetails = [
         imageId: "f996b31033fd07603bfb28cb4e526683",
         offerLine: "Items at 199",
         name: "Chinese Wok",
-        avgRating: "4",
+        avgRating: "4.6",
         deliveryTime: "55-60mins",
         cuisines: "Chinese , Tibetan, Asian",
         location: "Omaxe Mall"
