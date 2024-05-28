@@ -10,8 +10,6 @@ RestaurantCard.propTypes= {
 
 function RestaurantCard(props) {
 
-    console.log("props", props);
-
     const {imageId, offerLine, name, avgRating, deliveryTime, cuisines, location} = props.resDetails;
     
     return (

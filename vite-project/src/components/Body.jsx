@@ -1,58 +1,54 @@
 import RestaurantCard from "./RestaurantCard";
 import { restaurantDetails } from "../utils/mockData";
 import Search from "./Search";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TopRatedRestaurants from "./TopRatedRestaurants";
 import "./Body.css";
+import { Link } from "react-router-dom";
 
 function Body() {
+  const [filteredRestaurants, setFilteredRestaurants] =
+    useState(restaurantDetails);
+  const [isTopRated, setIsTopRated] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
-    const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantDetails);
-    // const [isTopRated, setIsTopRated] = useState(false);
-    // const [isSearch , setIsSearch] = useState(false);
+  function searchRestaurants(searchText) {
+    setSearchText(searchText);
+  }
 
-    function searchRestaurants(searchText) {
-        console.log("search", searchText);
-        let searchRestaurants  = restaurantDetails.filter(res => res.name.toUpperCase().includes(searchText.toUpperCase()));
-        setFilteredRestaurants(searchRestaurants);
-        // setIsSearch(true);
-
-
-        console.log("Filtered", searchRestaurants);
+  // api calls
+  useEffect(() => {
+    console.log("use effect called");
+    let searchRestaurants = restaurantDetails.filter((res) =>
+      res.name.toUpperCase().includes(searchText.toUpperCase())
+    );
+    if (isTopRated) {
+      searchRestaurants = searchRestaurants.filter(
+        (res) => parseFloat(res.avgRating) > 4.5
+      );
     }
+    setFilteredRestaurants(searchRestaurants);
+  }, [searchText, isTopRated]);
 
-    // api calls
-    // useEffect(() => {
-    //     console.log("coming here......")
-    //     if (isTopRated)  {
-    //         console.log("coming here");
-    //         let topRatedRestaurants = filteredRestaurants.filter(res => parseFloat(res.avgRating) > 4.5);
-    //         setFilteredRestaurants(topRatedRestaurants);
-    //     } 
+  function topRatedRestaurants() {
+    setIsTopRated(true);
+  }
 
-    // }, [isSearch, isTopRated]);
-
-    function topRatedRestaurants() {
-        // setIsTopRated(true);
-        let topRatedRestaurants = filteredRestaurants.filter(res => parseFloat(res.avgRating) > 4.5);
-        setFilteredRestaurants(topRatedRestaurants);   
-    }
-
-    return(
-        <>
-        {console.log("component rendered")}
-            <div className="filtering-components">
-                <Search searchFunction={searchRestaurants}/>
-                <TopRatedRestaurants topRatedFunction = {topRatedRestaurants}/> 
-            </div>
-            <div className="restaurant-container">
-            {
-                filteredRestaurants.map(res => <RestaurantCard key={res.id} resDetails= {res}/>)
-            }
-            </div>
-            
-        </>
-    )
+  return (
+    <>
+      <div className="filtering-components">
+        <Search searchFunction={searchRestaurants} />
+        <TopRatedRestaurants topRatedFunction={topRatedRestaurants} />
+      </div>
+      <div className="restaurant-container">
+        {filteredRestaurants.map((res) => (
+        <Link to={"/restaurant/"+ res.id} key={res.id}>
+            <RestaurantCard key={res.id} resDetails={res} />
+        </Link> 
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default Body;

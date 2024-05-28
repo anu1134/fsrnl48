@@ -26,3 +26,8 @@
     transform: scale(0.95);
     transition: linear 0.1s;
   }
+
+  .restaurant-container a {
+     color: inherit;
+     text-decoration: none;
+  }

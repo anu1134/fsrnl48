@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPercent, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css"
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { Link } from "react-router-dom";
 
 function Header() {
 
@@ -20,11 +21,13 @@ function Header() {
                         <FontAwesomeIcon icon={faPercent} />
                         <span>Offers</span>
                     </li>
-                    <li>Help</li>
+                    <li>
+                       <Link to="/help">Help</Link> 
+                    </li>
                     <li>Sign In</li>
                     <li>
                         <FontAwesomeIcon icon={faCartShopping} />
-                        <span>Cart</span>
+                        <Link to="/cart">Cart</Link>
                     </li>
                 </ul>
             </nav>
