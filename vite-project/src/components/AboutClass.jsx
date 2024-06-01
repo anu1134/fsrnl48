@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class AboutClass extends React.Component {
 
     constructor(props) {
+        console.log("Child constructor");
         super(props);
         this.state = {
             count: 0,
@@ -12,9 +13,23 @@ class AboutClass extends React.Component {
         }
     }
 
+    componentDidMount() {
+        console.log("Child component has been mounted");
+    }
+
+    componentDidUpdate() {
+        console.log("child component has been updated");
+    }
+
+    componentWillUnmount() {
+        console.log("child component has been unmounted");
+    }
+
     render() {
+        console.log("child component has beeb rendered");
 
         function updateCount() {
+            console.log("count button clicked");
             this.setState({count: this.state.count + 1})
         }
 
@@ -33,7 +48,7 @@ class AboutClass extends React.Component {
 
 AboutClass.propTypes= {
     name: PropTypes.string,
-    color: PropTypes.color
+    color: PropTypes.string
 }
 
 export default AboutClass;

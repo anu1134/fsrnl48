@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from 'prop-types';
 import "./RestaurantCard.css";
+import userContext from "../utils/userContext";
+import { useContext } from "react";
 
 RestaurantCard.propTypes= {
     resDetails: PropTypes.object
@@ -11,6 +13,8 @@ RestaurantCard.propTypes= {
 function RestaurantCard(props) {
 
     const {imageId, offerLine, name, avgRating, deliveryTime, cuisines, location} = props.resDetails;
+    
+    const {currentUser} = useContext(userContext);
     
     return (
         <>
@@ -25,6 +29,7 @@ function RestaurantCard(props) {
                 </div>
                 <span>{cuisines}</span>
                 <span>{location}</span>
+                <span>{currentUser}</span>
                 </div>
             </div>
         </>

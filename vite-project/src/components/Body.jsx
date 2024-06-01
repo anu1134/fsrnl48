@@ -5,12 +5,16 @@ import { useState, useEffect } from "react";
 import TopRatedRestaurants from "./TopRatedRestaurants";
 import "./Body.css";
 import { Link } from "react-router-dom";
+import userContext from "../utils/userContext";
+import { useContext } from "react";
 
 function Body() {
   const [filteredRestaurants, setFilteredRestaurants] =
     useState(restaurantDetails);
   const [isTopRated, setIsTopRated] = useState(false);
   const [searchText, setSearchText] = useState("");
+
+  const { setUserName } = useContext(userContext);
 
   function searchRestaurants(searchText) {
     setSearchText(searchText);
@@ -39,12 +43,13 @@ function Body() {
       <div className="filtering-components">
         <Search searchFunction={searchRestaurants} />
         <TopRatedRestaurants topRatedFunction={topRatedRestaurants} />
+        <input type="text" onChange={(e) => setUserName(e.target.value)} />
       </div>
       <div className="restaurant-container">
         {filteredRestaurants.map((res) => (
-        <Link to={"/restaurant/"+ res.id} key={res.id}>
+          <Link to={"/restaurant/" + res.id} key={res.id}>
             <RestaurantCard key={res.id} resDetails={res} />
-        </Link> 
+          </Link>
         ))}
       </div>
     </>

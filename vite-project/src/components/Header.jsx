@@ -3,10 +3,14 @@ import { faPercent, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css"
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import userContext from "../utils/userContext";
 
 function Header() {
 
     const onlineStatus = useOnlineStatus();
+
+    const { currentUser } = useContext(userContext);
 
     return (
         <>
@@ -20,6 +24,9 @@ function Header() {
                     <li>
                         <FontAwesomeIcon icon={faPercent} />
                         <span>Offers</span>
+                    </li>
+                    <li>
+                       <span>{currentUser}</span>
                     </li>
                     <li>
                        <Link to="/help">Help</Link> 

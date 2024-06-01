@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 About.propTypes= {
     name: PropTypes.string,
@@ -7,6 +7,8 @@ About.propTypes= {
 }
 
 function About (props) {
+
+    console.log("About component");
 
     const [count, setCount] = useState(0);
     const [count1, setCount1] = useState(1);
@@ -16,8 +18,22 @@ function About (props) {
         setCount1(23);
     }
 
+    const timer = setInterval(() => {
+        console.log("timer has started");
+    }, 1000);
+
+    useEffect(() => {
+        console.log("Functional componnet has been mounted")
+        return() => {
+            clearInterval(timer);
+            console.log("Functional component gets unmounted")
+        }
+    
+    }, [])
+
     return (
         <>
+            {console.log("component jsx")}
             <h1>About</h1>
             <h2>{props.name}</h2>
             <h3>{props.color}</h3>
