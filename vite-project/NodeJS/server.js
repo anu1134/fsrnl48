@@ -1,16 +1,22 @@
 import express from "express";
 import mongoose from "mongoose";
 import { routes } from "./routes/restaurants.routes.js";
+import { userRoutes } from "./routes/users.routes.js";
 
 const app = express();
 
+//Built in middlewares
 app.use(express.json());
 
 app.listen("5100", () => {
     console.log("server is running on port 5100");
 });
 
+// Application level middleware
+app.use(logUserRequest);
+
 routes(app);
+userRoutes(app);
 
 mongoose.connect("mongodb+srv://geeks:Geeksforgeeks123!@cluster0.hmpai02.mongodb.net/");
 
@@ -58,13 +64,24 @@ const users = [
     }
 ];
 
+function logUserRequest(req, res, next) {
+    console.log("user has initiated request");
+    next();
+}
+
 app.get("/", (req, res) => {
     res.send("Learning NodeJS");
 })
 
-app.get("/users", (req, res) => {
+// route level middlewares
+app.get("/users", authUser, (req, res) => {
     res.send(users);
 })
+
+function authUser(req, res, next) {
+    console.log("auth user");
+    next();
+}
 
 app.post("/users", (req, res) => {
     const name = req.body.name;

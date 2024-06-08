@@ -1,8 +1,9 @@
 import { create, deleteOne, fetch, fetchOne, updateOne } from "../controllers/restaurants.controller.js";
+import verifyToken from "../middlewares/verifyToken.js";
 
 export function routes(app) {
     app.post("/api/restaurant", create);
-    app.get("/api/restaurants", fetch);
+    app.get("/api/restaurants", verifyToken, fetch);
     app.get("/api/restaurant/:id",fetchOne);
     app.put("/api/restaurant/:id",updateOne);
     app.delete("/api/restaurant/:id", deleteOne)
