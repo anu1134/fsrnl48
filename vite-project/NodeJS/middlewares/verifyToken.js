@@ -14,7 +14,7 @@ function verifyToken(req, res, next) {
 
                 console.log("verified Token", verifiedToken);
                 if (err) {
-                   res.status(401).json({message: "Invalid JWT Token"});
+                   res.status(401).json({message: err.message || "Invalid JWT Token"});
                 }
 
                 // if (verifiedToken.exp) {
