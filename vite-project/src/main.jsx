@@ -9,6 +9,7 @@ import Body from './components/Body.jsx';
 import RestaurantDetails from './components/RestaurantDetails.jsx';
 import Sample from './components/Sample.jsx';
 import Memo from './components/Memo.jsx';
+import Login from './components/Login.jsx';
 
 const appRouter = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/memo',
         element: <Memo/>
+      },
+      {
+        path: '/login',
+        element: <Login/>
       }
     ]
   },

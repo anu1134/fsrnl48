@@ -20,6 +20,17 @@ function Body() {
     setSearchText(searchText);
   }
 
+  useEffect(() => {
+    fetch("http://localhost:5100/api/restaurants", {
+        method: "GET",
+        headers: {
+          "Content-Type" : "application/json",
+          "Authorization": `JWT ${sessionStorage.getItem("accessToken")}`
+        }
+      }).then(response => response.json())
+      .then(data => console.log(data));
+  }, [])
+
   // api calls
   useEffect(() => {
     console.log("use effect called");

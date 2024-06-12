@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPercent, faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import "./Header.css"
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -14,30 +13,35 @@ function Header() {
 
     return (
         <>
-            <nav>
+            <nav className="flex justify-around border border-black items-center w-full">
                 <img src="https://logowik.com/content/uploads/images/restaurant9491.logowik.com.webp" width="100px" height="100px" alt="" />
-                <ul>
-                    <li>
+                <ul className="flex">
+                    <li className="m-2.5 list-none">
                         {/* conditional rendering */}
-                        <span>{onlineStatus? "🟢" : "🔴"  }</span>
+                        <span className="ml-1">{onlineStatus? "🟢" : "🔴"  }</span>
                     </li>
-                    <li>
+                    <li className="m-2.5 list-none">
                         <FontAwesomeIcon icon={faPercent} />
-                        <span>Offers</span>
+                        <span className="ml-1">Offers</span>
                     </li>
-                    <li>
-                       <span>{currentUser}</span>
+                    <li className="m-2.5 list-none">
+                       <span className="ml-1">{currentUser}</span>
                     </li>
-                    <li>
+                    <li className="m-2.5 list-none">
                        <Link to="/help">Help</Link> 
                     </li>
-                    <li>Sign In</li>
-                    <li>
+                    <li className="m-2.5 list-none">
+                        <Link to="/login">Sign In</Link>  
+                    </li>
+                    <li className="m-2.5 list-none">
                         <FontAwesomeIcon icon={faCartShopping} />
                         <Link to="/cart">Cart</Link>
                     </li>
                 </ul>
             </nav>
+            {/* <Login>
+
+            </Login> */}
         </>
     )
 
