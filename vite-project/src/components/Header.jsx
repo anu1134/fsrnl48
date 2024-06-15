@@ -4,12 +4,15 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 function Header() {
 
     const onlineStatus = useOnlineStatus();
 
     const { currentUser } = useContext(userContext);
+
+    const cartItems = useSelector(store => store.cart.items );
 
     return (
         <>
@@ -35,7 +38,7 @@ function Header() {
                     </li>
                     <li className="m-2.5 list-none">
                         <FontAwesomeIcon icon={faCartShopping} />
-                        <Link to="/cart">Cart</Link>
+                        <Link to="/cart">Cart - {cartItems.length} items</Link>
                     </li>
                 </ul>
             </nav>
