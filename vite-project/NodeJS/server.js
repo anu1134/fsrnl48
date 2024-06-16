@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import { routes } from "./routes/restaurants.routes.js";
 import { userRoutes } from "./routes/users.routes.js";
+import { menuRoutes } from "./routes/restaurant-menu.routes.js";
 import cors from "cors";
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(logUserRequest);
 
 routes(app);
 userRoutes(app);
+menuRoutes(app);
 
 mongoose.connect("mongodb+srv://geeks:Geeksforgeeks123!@cluster0.hmpai02.mongodb.net/");
 

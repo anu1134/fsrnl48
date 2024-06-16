@@ -1,14 +1,32 @@
-import { restaurantMenuItems } from "../utils/mockData";
 import { menuImageUrl } from "../utils/mockData";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function RestaurantDetails() {
   const dispatch = useDispatch();
 
+  const [ restaurantMenuItems, setRestaurantMenuItems] = useState([]);
+
+  const params = useParams();
+
   const handleAddItem = (item) => {
     dispatch(addItem(item));
-  }
+  };  
+
+  useEffect(() => {
+    fetch(`http://localhost:5100/api/restaurantMenu/${params.resId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type" : "application/json",
+        }
+    }).then(response => response.json())
+   .then(data => {
+    setRestaurantMenuItems(data.menuItems)
+   });
+  }, [params.resId]);
 
   return (
     <div>

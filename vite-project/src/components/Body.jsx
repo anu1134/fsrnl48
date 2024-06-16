@@ -10,7 +10,7 @@ import { useContext } from "react";
 
 function Body() {
   const [filteredRestaurants, setFilteredRestaurants] =
-    useState(restaurantDetails);
+    useState([]);
   const [isTopRated, setIsTopRated] = useState(false);
   const [searchText, setSearchText] = useState("");
 
@@ -28,7 +28,10 @@ function Body() {
           "Authorization": `JWT ${sessionStorage.getItem("accessToken")}`
         }
       }).then(response => response.json())
-      .then(data => console.log(data));
+      .then(data => {
+        console.log(data)
+        setFilteredRestaurants(data);
+      });
   }, [])
 
   // api calls
@@ -58,7 +61,7 @@ function Body() {
       </div>
       <div className="restaurant-container">
         {filteredRestaurants.map((res) => (
-          <Link to={"/restaurant/" + res.id} key={res.id}>
+          <Link to={"/restaurant/" + res._id} key={res._id}>
             <RestaurantCard key={res.id} resDetails={res} />
           </Link>
         ))}
