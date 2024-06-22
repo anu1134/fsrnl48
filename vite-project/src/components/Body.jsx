@@ -21,7 +21,7 @@ function Body() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5100/api/restaurants", {
+    fetch("https://webapi-izyj.onrender.com/api/restaurants", {
         method: "GET",
         headers: {
           "Content-Type" : "application/json",

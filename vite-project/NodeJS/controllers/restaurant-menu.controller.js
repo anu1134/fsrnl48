@@ -11,6 +11,7 @@ export function create(req, res) {
 
     newRestaurantMenu.save().then(data => {
         if(!data) {
+            console.log("checking");
             res.status(400).send("something went wrong");
         }
     
